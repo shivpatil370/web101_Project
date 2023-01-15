@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        #signup{
+            width: 300px;
+            margin: 100px;
+            padding: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        body{
+            background-color:rgb(221, 241, 191);
+        }
+    </style>
+</head>
+<body>
+    <div id="signup">
+        <h1>Signup Page</h1>
+        <form>
+            <label>Write Your Name</label><br>
+             <input type="text"><br>
+
+
+            <label for="">email id</label><br>
+            <input id="email" type="email" placeholder="enter email"><br>
+            <br>
+
+            <label>password</label><br>
+            <input id="pass" type="password" placeholder="enter password"><br>
+            <br>
+
+            <label for="">submit click here</label><br>
+            <input id="submit" type="submit">
+            <a href="./login.html">login</a>
+        </form>
+    </div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",myfun);
+
+         function myfun(event){
+           event.preventDefault();
+            let email=document.querySelector("#email").value;
+            let password=document.querySelector("#pass").value;
+
+            let obj={
+                email,
+                password
+            }
+
+
+            if(obj.email==""||obj.password==""){
+                 alert("Please fill all Data")
+            }else{
+                alert("Signup Done. (Congratulation!)You can login page! Click on login page")
+                localStorage.setItem("sign",JSON.stringify(obj))
+            }
+         }
+</script>

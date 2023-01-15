@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style>
+        #box{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+        }
+        #box>div>img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        #box>div{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+       
+        #nav{
+            display: flex;
+        }
+        h1{
+            text-align: center;
+        }
+        #btn{
+            margin-left: 90%;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 60px;
+        }
+        button{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     <h1>On the Menu</h1>
+     <button id="btn"><a href="./acart.html">cart</a></button>
+   
+    <div id="box"></div>
+</body>
+</html>
+<script>
+   
+    let product=[
+        {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb765dff2da0c2e1fb_635823f4ce4929328b1f96f9_production-meal-image-9e969581-d09c-4617-9b17-d455d23c8952.jpeg",
+         name:"BBQ Bison Burger*",
+         information:"610cal | Gluten Free | Single-Serve",
+          price:233},
+
+         {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb8cd4f9d87ba86916_635823f4ce492977d91f974a_production-meal-image-f0de55be-d691-4ade-bc26-b4a8aedaa1fe.jpeg",
+        name:"Sausage Baked Penne",
+        information:"670cal | Gluten Free | Single-Serve",
+        price:399},
+        {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb5ae22f4680ff53d8_635823f4ce492947161f9738_production-meal-image-e4122aa8-0fe7-4854-b6f5-e27e0c5be918.jpeg",
+          name:"Cauliflower Shell Beef Bolognese",
+         information:"560cal | Gluten Free | Single-Serve",
+         price:350},
+         {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb8b1f5aa9b139be56_635823f4ce492904901f973e_production-meal-image-c9eef45a-97a9-487c-9550-71488e5f639a.jpeg",
+          name:"Homestyle Chicken",
+          information:"490cal | Gluten Free | Single-Serve",
+          price:421},
+
+
+          {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb7be30f1df3054aa2_635823f4ce492958261f9755_production-meal-image-29e2b6e1-12af-405d-8b33-91e19b2a0fef.jpeg",
+           name:"Tricolor Beef Lasagna",
+           information:"640cal | Gluten Free | Single-Serve",
+           price:333},
+           {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb684a20a3c8466513_635823f4ce492969991f9772_production-meal-image-25f9ce2d-ca21-499e-a140-8d59b4733ec2.jpeg",
+            name:"Flame-Seared Top Blade Steak",
+            information:"610cal | Gluten Free | Single-Serve",
+            price:450},
+            {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb765dff25b4c2e1ef_635823f4ce49292cdf1f9759_production-meal-image-7a62bb89-9bcb-4f1f-9f0f-d8372698d48e.jpeg",
+             name:"Protein-Packed Chicken Parm",
+             information:"670cal | Gluten Free | Single-Serve",
+             price:370},
+             {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bb5ae22f2be0ff53c1_635823f4ce4929bf011f9751_production-meal-image-92ec0fc1-d352-4720-9b83-96798ab8d2de.jpeg",
+              name:"Savory-Sweet Chicken Teriyaki Bowl",
+              information:"670cal | Gluten Free | Single-Serve",
+              price:300},
+
+
+              {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bbb3434944174678b8_635823f4ce492970be1f970e_production-meal-image-17ade4a4-7351-4ff8-95c6-765d70e5ea5d.jpeg",
+               name:"Steak Peppercorn",
+               information:"510cal | Gluten Free | Single-Serve",
+               price:290},
+               {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66bbd15e7153619b09ed_635823f4ce492908a71f9731_production-meal-image-bc1b24c8-f62a-4756-a40e-173a8b67a590.jpeg",
+                name:"Golden Oven-Fried Chicken & Mash",
+                information:"510cal | Gluten Free | Single-Serve",
+                price:555},
+                {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba53442824eea7387b_635823f4ce492943221f9741_production-meal-image-536ab066-5461-4cc0-bbad-f3246a0bb7df.jpeg",
+                 name:"3 Grilled Chicken Breasts (9.75 oz)",
+                 information:"160cal | Gluten Free | Single-Serve",
+                  price:210},
+                 {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba1b19b259785b9701_635823f4ce49294a4d1f9745_production-meal-image-ef64cbd3-cc91-4c5f-9865-b9ff0442572e.jpeg",
+                  name:"Zingy Buffalo Chicken",
+                  information:"470cal | Gluten Free | Single-Serve",
+                  price:499},
+
+
+             {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66baa6980360ca0578ae_635823f4ce492939fc1f9723_production-meal-image-d5ef4016-ed9b-4aac-93e1-109ae9b9b6ba.jpeg",
+              name:"Philly-ish Cheesesteak",
+              information:"540cal | Gluten Free | Single-Serve",
+              price:320},
+              {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba0238eb0c6d9aab2e_635823f4ce4929f27a1f9729_production-meal-image-2fd3df62-8abf-413e-8650-afca039518ec.jpeg",
+               name:"Steak Peppercorn",
+               information:"500cal | Gluten Free | Single-Serve",
+               price:441},
+               {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba503a5b1714628910_635823f4ce4929575f1f97b0_production-meal-image-6c9081ec-aecf-4eb0-980c-4843c3883727.jpeg",
+                name:"Linguine Marinara & Beef Meatballs",
+                information:"430cal | Gluten Free | Single-Serve",
+                price:310},
+                {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66baabcbab4689f2a67d_635823f4ce49292dfc1f975e_production-meal-image-fa07e0dc-cb7f-43d7-a669-d35dc3fbcf93.jpeg",
+                 name:"Chicken Tikka Masala",
+                 information:"570cal | Gluten Free | Single-Serve",
+                 price:399},
+
+
+            {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba2304e159bb9e2b4e_635823f4ce492964a01f971f_production-meal-image-d30dad76-4b61-40ab-bdfc-0d7a907829a6.jpeg",
+             name:"Roasted Tomato & Parmesan Risotto",
+             information:"490cal | Gluten Free | Single-Serve",
+              price:365},
+             {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba243b24b4a60f949b_635823f4ce4929390e1f976c_production-meal-image-4663a574-d74a-4854-a881-ef4da5b24cee.jpeg",
+              name:"Swede-ish Meatballs",
+              information:"630cal | Gluten Free | Single-Serve",
+              price:360},
+              {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66b91c7417151a7735ef_635823f4ce4929a4141f97c5_production-meal-image-4e60254a-6b6e-461b-9ec7-a25a2035949f.jpeg",
+               name:"Creamy Chicken Fettuccine Alfredo",
+               information:"360cal | Gluten Free | Single-Serve",
+               price:252},
+               {img:"https://assets-global.website-files.com/5d03b4e13011831ae4624b37/636a66ba5f7a141963813370_635823f4ce492947371f9766_production-meal-image-578506ac-e956-4c6f-bcbc-4e709ab34f98.jpeg",
+                name:"8 Baked Turkey Meatballs (9.98 oz)",
+                information:"110cal | Gluten Free | Single-Serve",
+                price:299}
+    ]
+       
+    let bag=[];
+       
+    function products(deta){
+        // console.log(deta)
+        deta.forEach((ele)=>{
+
+            let div=document.createElement("div");
+
+            let img=document.createElement("img");
+            img.setAttribute("src",ele.img);
+
+            let name=document.createElement("h3");
+            name.innerText=ele.name;
+
+            let information=document.createElement("p");
+            information.innerText=ele.information;
+
+            let price=document.createElement("h4");
+            price.innerText=ele.price;
+
+            let cart=document.createElement("button");
+            cart.innerText="Add to Cart";
+            cart.addEventListener("click",function(){
+
+                alert("added cart successfully!")
+
+               addCart(ele)
+            })
+            
+            div.append(img,name,information,price,cart)
+            document.querySelector("#box").append(div);
+
+        })
+        
+    }
+        products(product)
+
+        function addCart(element){
+          console.log(element);
+          let ls_Data=JSON.parse(localStorage.getItem("cart"))||[];
+        ls_Data.push(element)
+        localStorage.setItem("cart",JSON.stringify(ls_Data))
+        }
+
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <style>
+        #login{
+            width: 300px;
+            margin: 100px;
+            padding: 50px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        body{
+            background-color:rgb(221, 241, 191);
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Login Page</h1>
+        <form>
+            <label for="">email id</label><br>
+            <input id="email" type="email" placeholder="enter email"><br>
+            <br>
+
+            <label>password</label><br>
+            <input id="pass" type="password" placeholder="enter password"><br>
+            <br>
+
+            <label for="">submit click here</label><br>
+            <input id="submit" type="submit">
+            <a href="./signup.html">SignUp</a>
+            
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    
+    let getsignupData=document.querySelector("form").addEventListener("submit",myfun);
+let getsignup=JSON.parse(localStorage.getItem("sign"))||[];
+
+   function myfun(event){
+     event.preventDefault();
+      let email=document.querySelector("#email").value;
+      let password=document.querySelector("#pass").value;
+
+      let obj={
+          email,
+          password
+      }
+
+
+        if(obj.email==""||obj.password==""){
+           alert("Please fill all Data")
+      }else{
+        if(getsignup.email==obj.email){
+           if(getsignup.password==obj.password){
+
+               alert("Login Done! (You can order Product!");
+
+               window.location.assign("apimenu.html")
+
+           }else{
+            alert("Password Wrong!");
+           }
+        }else{
+            alert("Email Wrong!(if u forgot email then u can signup and then login!)")
+        }
+      }
+   }
+    //   });
+
+
+        
+        
+
+           
+
+     
+</script>
